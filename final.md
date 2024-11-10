@@ -5,8 +5,10 @@
 4) Выводы зафиксировать
 
 1-2. Создаем *docker-compose* файл, состоящий из двух контейнеров:
-  1 - веб, nginx
-  2 - БД, mariadb
+
+1 - веб, nginx
+
+2 - БД, mariadb
 
 Docker-compose file для окружения dev (dev.yaml):
 ```
@@ -135,7 +137,8 @@ docker ps
 ![image](https://github.com/user-attachments/assets/0a15f18b-dae6-4c76-8e56-2504c43efbeb)
 
 
-~*4. Вывод результатов*~
+4. Вывод результатов.
+
 Вывод логов выполнения для окружения dev:
 ```
 sudo docker-compose -f dev.yaml logs
@@ -160,9 +163,10 @@ sudo docker-compose -f lab.yaml logs
 2) повторить задание 1 для двух окружений: lab, dev
 3) обязательно проверить и зафиксировать результаты, чтобы можно было выслать преподавателю для проверки
 
-#1-2. Создаем *docker-compose* файл, состоящий из двух контейнеров:
+1-2. Создаем *docker-compose* файл, состоящий из двух контейнеров:
 
 1 - веб, nginx
+
 2 - БД, mariadb
 
 Docker-compose file для окружения lab (lab.yaml):
@@ -225,7 +229,9 @@ networks:
  network_net:
 ```
 
-## 3. После того, как создали сервисы для каждого окружения, выполняем следующие команды для развертывания контейнеров:
+
+После того, как создали сервисы для каждого окружения, выполняем следующие команды для развертывания контейнеров:
+
 Развертывание для lab окружения:
 ```
 sudo docker-compose -f lab.yaml up -d
@@ -245,6 +251,7 @@ sudo docker-compose -f dev.yaml up -d
 docker ps
 ```
 ![image](https://github.com/user-attachments/assets/83515794-9912-4ae8-a130-54ef47ec010d)
+
 
 
 Вывод логов выполнения для окружения lab:
