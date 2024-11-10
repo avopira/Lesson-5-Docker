@@ -6,9 +6,9 @@
 
 1-2. Создаем *docker-compose* файл, состоящий из двух контейнеров:
   
-   1 - веб, nginx
+     1 - веб, nginx
    
-   2 - БД, mariadb
+     2 - БД, mariadb
 
 Docker-compose file для окружения dev (dev.yaml):
 ```
