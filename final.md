@@ -9,8 +9,9 @@
    2 - БД, mariadb
 
 Docker-compose file для окружения dev (dev.yaml):
-
+```
 sudo nano dev.yaml
+```
 ```
 version: '3.3'
 services:
@@ -38,8 +39,9 @@ networks:
 
 
 Docker-compose file для окружения prod (prod.yaml):
-
+```
 sudo nano prod.yaml
+```
 ```
 version: '3.3'
 
@@ -103,32 +105,53 @@ networks:
 3. После того, как создали сервисы для каждого окружения, выполняем следующие команды для развертывания контейнеров:
 
 Развертывание для dev окружения:
+```
 sudo docker-compose -f dev.yaml up -d
+```
+Проверяем работу контейнеров следующей командой:
+```
 docker ps
+```
 ![image](https://github.com/user-attachments/assets/83515794-9912-4ae8-a130-54ef47ec010d)
 
 Развертывание для prod окружения:
+```
 sudo docker-compose -f prod.yaml up -d
+```
+Проверяем работу контейнеров следующей командой:
+```
 docker ps
+```
 ![image](https://github.com/user-attachments/assets/da741690-76a0-4264-b59a-e4db7f19404c)
 
 Развертывание для lab окружения:
+```
 sudo docker-compose -f lab.yaml up -d
+```
+Проверяем работу контейнеров следующей командой:
+```
 docker ps
+```
 ![image](https://github.com/user-attachments/assets/0a15f18b-dae6-4c76-8e56-2504c43efbeb)
 
 
 4. Вывод логов
 Вывод логов выполнения для окурежния dev:
+```
 sudo docker-compose -f dev.yaml logs
+```
 ![image](https://github.com/user-attachments/assets/d37bb4b9-4b8b-4470-9831-b93ec411e0f1)
 
 Вывод логов выполнения для окурежния prod:
+```
 sudo docker-compose -f prod.yaml logs
+```
 ![image](https://github.com/user-attachments/assets/51c42244-d8ec-4dfc-ba08-073e7e745da2)
 
 Вывод логов выполнения для окурежния lab:
+```
 sudo docker-compose -f lab.yaml logs
+```
 ![image](https://github.com/user-attachments/assets/c3637656-ddea-4e94-b442-91841cf7ded7)
 
 
@@ -142,7 +165,9 @@ sudo docker-compose -f lab.yaml logs
    2 - БД, mariadb
 
 Docker-compose file для окружения lab (lab.yaml):
+```
 sudo nano lab.yaml
+```
 ```
 version: '3.3'
 
@@ -171,7 +196,9 @@ networks:
 ```
 
 Docker-compose file для окружения dev:
+```
 sudo nano dev.yaml
+```
 ```
 version: '3.3'
 services:
@@ -199,20 +226,32 @@ networks:
 
 3. После того, как создали сервисы для каждого окружения, выполняем следующие команды для развертывания контейнеров:
 Развертывание для lab окружения:
+```
 sudo docker-compose -f lab.yaml up -d
+```
+Проверяем работу контейнеров следующей командой:
+```
+docker ps
+```
 ![image](https://github.com/user-attachments/assets/0a15f18b-dae6-4c76-8e56-2504c43efbeb)
 
-docker ps
-
-
-Вывод логов выполнения для окурежния lab:
-sudo docker-compose -f lab.yaml logs
-![image](https://github.com/user-attachments/assets/c3637656-ddea-4e94-b442-91841cf7ded7)
-
+Развертывание для dev окружения:
+```
 sudo docker-compose -f dev.yaml up -d
+```
 docker ps
 ![image](https://github.com/user-attachments/assets/83515794-9912-4ae8-a130-54ef47ec010d)
 
-Вывод логов выполнения для окурежния dev:
+
+Вывод логов выполнения для окурежния lab:
+```
+sudo docker-compose -f lab.yaml logs
+```
+![image](https://github.com/user-attachments/assets/c3637656-ddea-4e94-b442-91841cf7ded7)
+
+
+Вывод логов выполнения для окружения dev:
+```
 sudo docker-compose -f dev.yaml logs
+```
 ![image](https://github.com/user-attachments/assets/d37bb4b9-4b8b-4470-9831-b93ec411e0f1)
