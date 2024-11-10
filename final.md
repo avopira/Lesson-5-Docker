@@ -16,6 +16,9 @@ services:
  web:
   image: nginx:latest
   ports:
+   - "8081:80"
+  networks:
+   - network_net
 ```
   
 ![image](https://github.com/user-attachments/assets/dbe13a32-623e-41b0-929e-507724f3ea50)
