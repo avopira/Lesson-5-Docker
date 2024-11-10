@@ -19,17 +19,81 @@ services:
    - "8081:80"
   networks:
    - network_net
+
+ db:
+  image: mariadb:latest
+  environment:
+   MYSQL_ROOT_PASSWORD: dev1234
+  volumes:
+   - dev_db_data:/var/lib/mysql
+  networks:
+   - network_net
+
+volumes:
+ dev_db_data:
+networks:
+ network_net:
 ```
-  
-![image](https://github.com/user-attachments/assets/dbe13a32-623e-41b0-929e-507724f3ea50)
+
 
 Docker-compose file для окружения prod (prod.yaml):
 sudo nano prod.yaml
-![image](https://github.com/user-attachments/assets/aad1fef1-3f1d-4d3c-944c-c34fa3cbc396)
+```
+version: '3.3'
+
+services:
+ web:
+  image: nginx:latest
+  ports:
+   - "81:80"
+  networks:
+   - network_net
+
+ db:
+  image: mariadb:latest
+  environment:
+   MYSQL_ROOT_PASSWORD: prod1234
+  volumes:
+   - prod_db_data:/var/lib/mysql
+  networks:
+   - network_net
+
+
+volumes:
+ prod_db_data:
+networks:
+ network_net:
+```
 
 Docker-compose file для окружения lab (lab.yaml):
 sudo nano lab.yaml
-![image](https://github.com/user-attachments/assets/25a50009-0b67-45c0-9a1f-36590c104225)
+```
+version: '3.3'
+
+services:
+ web:
+  image: nginx:latest
+  ports:
+   - "8082:80"
+  networks:
+   - network_net
+
+ db:
+  image: mariadb:latest
+  environment:
+   MYSQL_ROOT_PASSWORD: lab1234
+  volumes:
+   - lab_db_data:/var/lib/mysql
+  networks:
+   - network_net
+
+
+volumes:
+ lab_db_data:
+networks:
+ network_net:
+```
+
 
 3. После того, как создали сервисы для каждого окружения, выполняем следующие команды для развертывания контейнеров:
 
@@ -74,17 +138,67 @@ sudo docker-compose -f lab.yaml logs
 
 Docker-compose file для окружения lab (lab.yaml):
 sudo nano lab.yaml
-![image](https://github.com/user-attachments/assets/25a50009-0b67-45c0-9a1f-36590c104225)
+```
+version: '3.3'
+
+services:
+ web:
+  image: nginx:latest
+  ports:
+   - "8082:80"
+  networks:
+   - network_net
+
+ db:
+  image: mariadb:latest
+  environment:
+   MYSQL_ROOT_PASSWORD: lab1234
+  volumes:
+   - lab_db_data:/var/lib/mysql
+  networks:
+   - network_net
+
+
+volumes:
+ lab_db_data:
+networks:
+ network_net:
+```
 
 Docker-compose file для окружения dev:
 sudo nano dev.yaml
-![image](https://github.com/user-attachments/assets/dbe13a32-623e-41b0-929e-507724f3ea50)
+```
+version: '3.3'
+services:
+ web:
+  image: nginx:latest
+  ports:
+   - "8081:80"
+  networks:
+   - network_net
+
+ db:
+  image: mariadb:latest
+  environment:
+   MYSQL_ROOT_PASSWORD: dev1234
+  volumes:
+   - dev_db_data:/var/lib/mysql
+  networks:
+   - network_net
+
+volumes:
+ dev_db_data:
+networks:
+ network_net:
+```
 
 3. После того, как создали сервисы для каждого окружения, выполняем следующие команды для развертывания контейнеров:
 Развертывание для lab окружения:
 sudo docker-compose -f lab.yaml up -d
-docker ps
 ![image](https://github.com/user-attachments/assets/0a15f18b-dae6-4c76-8e56-2504c43efbeb)
+
+docker ps
+
 
 Вывод логов выполнения для окурежния lab:
 sudo docker-compose -f lab.yaml logs
