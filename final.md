@@ -10,6 +10,14 @@
 
 Docker-compose file для окружения dev (dev.yaml):
 sudo nano dev.yaml
+```
+version: '3.3'
+services:
+ web:
+  image: nginx:latest
+  ports:
+```
+  
 ![image](https://github.com/user-attachments/assets/dbe13a32-623e-41b0-929e-507724f3ea50)
 
 Docker-compose file для окружения prod (prod.yaml):
@@ -69,6 +77,20 @@ Docker-compose file для окружения dev:
 sudo nano dev.yaml
 ![image](https://github.com/user-attachments/assets/dbe13a32-623e-41b0-929e-507724f3ea50)
 
-3. 
+3. После того, как создали сервисы для каждого окружения, выполняем следующие команды для развертывания контейнеров:
+Развертывание для lab окружения:
+sudo docker-compose -f lab.yaml up -d
+docker ps
+![image](https://github.com/user-attachments/assets/0a15f18b-dae6-4c76-8e56-2504c43efbeb)
 
+Вывод логов выполнения для окурежния lab:
+sudo docker-compose -f lab.yaml logs
+![image](https://github.com/user-attachments/assets/c3637656-ddea-4e94-b442-91841cf7ded7)
 
+sudo docker-compose -f dev.yaml up -d
+docker ps
+![image](https://github.com/user-attachments/assets/83515794-9912-4ae8-a130-54ef47ec010d)
+
+Вывод логов выполнения для окурежния dev:
+sudo docker-compose -f dev.yaml logs
+![image](https://github.com/user-attachments/assets/d37bb4b9-4b8b-4470-9831-b93ec411e0f1)
