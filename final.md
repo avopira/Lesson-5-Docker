@@ -9,6 +9,7 @@
    2 - БД, mariadb
 
 Docker-compose file для окружения dev (dev.yaml):
+
 sudo nano dev.yaml
 ```
 version: '3.3'
@@ -37,6 +38,7 @@ networks:
 
 
 Docker-compose file для окружения prod (prod.yaml):
+
 sudo nano prod.yaml
 ```
 version: '3.3'
@@ -66,7 +68,9 @@ networks:
 ```
 
 Docker-compose file для окружения lab (lab.yaml):
-sudo nano lab.yaml
+```sudo nano lab.yaml
+```
+
 ```
 version: '3.3'
 
