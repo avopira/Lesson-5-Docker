@@ -68,7 +68,8 @@ networks:
 ```
 
 Docker-compose file для окружения lab (lab.yaml):
-```sudo nano lab.yaml
+```
+sudo nano lab.yaml
 ```
 
 ```
